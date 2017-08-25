@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Chinese test</title>
+	<link rel="stylesheet" href="style/chineseTest.css">
+</head>
+<body>
+<div class="main-wrapper">
+	<div class="header">
+		<div class="container">
+			<div class="logo">
+			<a href="index.html">
+			<img src="images/logo.png" alt="logo">
+			</a>
+			</div>
+		</div>
+		<ul class="list clearfix">
+			<div class="line" id="line1"></div>
+			<li id="top"><a href="Download.html">Download</a></li>
+			<div class="line" id="line2"></div>
+			<li id="ct"><a id="chineseTest" href="Chinese test.html">Chinese test</a></li>
+			<div class="line" id="line3"></div>
+			<li id="download"><a href="index.html">Top</a></li>
+			<div class="line" id="line4"></div>
+		</ul>
+	</div>
+	<pre id="aa" class="saying"></pre> 
+	<div class="background" style="width: 100%;">
+	<!-- <img src="images/4.png" alt=""> -->
+	<div class="wrapper">
+		<div id="title-wrapper">
+		<span id="test-title">CHINESE TEST</span>
+		<span class="test" id="test1"><a id="vt" href="#">Vocabulary test</a></span>
+		<span class="test" id="test2"><a href="#">Pronunciation test</a></span>
+		</div>
+		<div id="hsk-wrapper">
+		<button type="submit" class="hsk" id="hsk1"><a href="HSK1.html">HSK1</a></button>
+		<button type="submit" class="hsk"><a href="#">HSK2</a></button>		
+		<button type="submit" class="hsk"><a href="#">HSK3</a></button>
+		<button type="submit" class="hsk"><a href="#">HSK4</a></button>
+		<button type="submit" class="hsk"><a href="#">HSK5</a></button>
+		<button type="submit" class="hsk"><a href="#">HSK6</a></button>
+	    </div>
+	</div>
+	</div>
+	</div>
+	<img id="pink-background" src="images/4.png" alt="">
+	<img id="table-background" src="images/table.png" alt="">
+	<img id="bg-background" src="images/bg.png" alt="" >
+	<img id="tea" src="images/tea.png" alt="">
+	<img id="lefthand" src="images/lefthand.png" alt="">
+	<img id="righthand" src="images/righthand.png" alt="">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript">
+		$('#vt').click(function () {
+			var timeout=500;
+			var index=0;
+			// console.log($('.hsk').length);
+			var addClassOn;
+			addClassOn=setInterval(function () {
+				if (index >= $('.hsk').length) {
+					index=0;
+				} else {
+					$('.hsk').eq(index++).fadeIn();
+					// console.log(index);	
+					if (index==6) {
+						clearInterval(addClassOn);
+					}								
+				}
+			},timeout);
+		}) 
+	</script>
+</body>
+</html>

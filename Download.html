@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Download</title>
+	<link rel="stylesheet" href="style/download.css">
+</head>
+<body>
+	<div class="header">
+		<div class="head-container">
+			<div class="logo">
+			<a href="index.html">
+			<img src="images/logo.png" alt="logo">
+			</a>
+			</div>
+		</div>
+		<div class="list clearfix">
+		<ul>
+			<li class="line" id="line1"></li>
+			<li id="top"><a href="Download.html">Download</a></li>
+			<li class="line" id="line2"></li>
+			<li id="ct"><a href="Chinese test.html">Chinese test</a></li>
+			<li class="line" id="line3"></li>
+			<li id="download"><a href="index.html">Top</a></li>
+			<li class="line" id="line4"></li>
+		</ul>
+		</div>
+	</div>
+	<div class="text-content">
+		<div class="play">
+		<img id="btn_play" src="images/btn_video-play_pre.png" alt="">
+		</div>
+	<div class="middle-wrapper">
+		<div class="left-wrapper">
+		<span style="font-size: 1.5em;
+    color: white; margin-top: 3%;">
+			Chinteresting APP is tring to meet you as soon as possible.Stay tuned.
+		</span><br>
+		<span style="font-size: 1.5em;
+    color: white;
+">
+			Join us advance and we will email you when the app goes live.
+		</span>
+		<input type="text" id="E-mail" placeholder="E-mail"><br>
+		<button id="btn_sign">Sign In</button>
+		</div>
+		<div class="fixed-wrapper">
+		<img src="images/ipone_left.png" alt="">
+		</div>
+		<div class="phone-wrapper clearfix">
+		<img src="images/ipone_right.png" alt="">
+		<div id="carousel" style="left: -73.67%">
+			<img src="images/picture_4.png" alt="" id="img">
+			<img src="images/picture_1.png" alt="" >
+			<img src="images/picture_2.png" alt="" >
+			<img src="images/picture_3.png" alt="" >
+			<img src="images/picture_4.png" alt="" >
+			<img src="images/picture_1.png" alt="" >
+		</div>
+		</div>
+	</div>
+
+	</div>
+	<div class="mask_sign">
+	</div>
+	<div id="hidden-box">
+		<img id="btn_close_sign" src="images/btn_close_pre.png" alt="btn_close_pre" style="margin-top: 14%;margin-bottom: 14%;"><br>
+		<span>We have sent a confirmation<br>to your mailbox.<br>Please click <b><a id="text" href="#" style="text-decoration: none;color: coral;">here</a></b> to jump <br> to the mailbox landing.</span>
+	</div>
+		<div id="video_box">
+		<video id="video" controls="controls">
+			<source src="images/song.mp4" type="video/mp4">
+			您的浏览器不支持video标签！
+		</video>
+		</div>
+	<script type="text/javascript" src="js/jquery.js">
+	</script>
+<!-- <script type="text/javascript">
+var mask_sign=$('.mask_sign'),
+btn_close_sign=$('#btn_close_sign'),
+video_box=$('#video_box')
+btn_play=$('#btn_play'),
+hidden_box=$('#hidden-box'),
+video=document.getElementById('video');
+	btn_play.click(function play() {
+		mask_sign.fadeIn(),
+		video_box.fadeIn();
+	})
+	function close(){
+		mask_sign.fadeOut(),
+		video_box.fadeOut(),
+		video.pause();
+		hidden_box.fadeOut();
+	}
+	btn_close_sign.on('click',close),
+	mask_sign.on('click',close);
+	$('#btn_sign').click(function validatea(){
+		var email=document.getElementById('E-mail').value;
+		var reg=/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((.[a-zA-Z0-9_-]{2,3}){1,2})$/;
+		var text=document.getElementById('text');
+		text.setAttribute("href",email);
+	if(reg.test(email))
+	hidden_box.fadeIn(),
+	mask_sign.fadeIn();
+else alert("Please enter the correct email address!");
+});
+	window.onload=function () {
+		var phone_wrapper=document.getElementById('phone-wrapper');
+		var carousel=document.getElementById('carousel');
+		var btn_sign=document.getElementById('btn_sign');
+		var timer;
+		var img=document.getElementById('img');
+		var width=parseInt(img.offsetWidth);
+		// console.log(width);
+		play();
+		// function
+		function animate(offset) {
+			var newLeft=parseInt(carousel.style.left)+offset;
+			var time=300;
+			var interval=10;
+			var speed=offset/(time/interval);
+			function go() {
+				if (speed<0&&parseInt(carousel.style.left)>newLeft) {
+					carousel.style.left=parseInt(carousel.style.left)+speed+'px';
+					setTimeout(go,interval);
+					console.log(carousel.style.left);
+				}
+				else{ 
+					carousel.style.left=newLeft+'px';
+			if (parseInt(carousel.style.left)<-984) {
+				carousel.style.left=-width+'px';
+			}
+				}
+			}
+			go();
+			
+		}
+		function play() {
+			timer=setInterval(function () {
+				animate(-width);
+			},3000);
+		}
+	}
+</script> -->
+</body>
+</html>

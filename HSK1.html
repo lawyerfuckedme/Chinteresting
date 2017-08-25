@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>HSK1</title>
+	<link rel="stylesheet" href="style/HSK1.css">
+</head>
+<body>
+	<div id="main-wrapper">
+	<img src="images/hsk-background.png" alt="" style="width: 100%;height: 100%;position: absolute;z-index: -1;left: 0;top: 0;">
+	<div class="header">
+		<div class="container">
+			<div class="logo">
+			<a href="index.html">
+			<img src="images/logo.png" alt="logo">
+			</a>
+			</div>
+		</div>
+		<ul class="list clearfix">
+			<div class="line" id="line1"></div>
+			<li id="top"><a href="Download.html">Download</a></li>
+			<div class="line" id="line2"></div>
+			<li id="ct"><a id="chineseTest" href="Chinese test.html">Chinese test</a></li>
+			<div class="line" id="line3"></div>
+			<li id="download"><a href="index.html">Top</a></li>
+			<div class="line" id="line4"></div>
+			<div class="line" id="line4"></div>
+		</ul>
+	</div>
+	<div class="content"  style="background: url(images/paperanderaser.png);">
+	<div>
+		<form action="{:url('Test/text')}" method="post">
+			<span id="text">{$Chinese}</span>
+			<input type="submit" name="content" value="{$English}" class="option" id="option1">
+			<input type="submit" name="content" value="{$English1}" class="option" id="option2">
+			<input type="submit" name="content" value="{$English2}" class="option" id="option3">
+			<input type="submit" name="content" value="{$English3}" class="option" id="option4">
+		</form>
+		<span style="color: #4c4343;font-size: 28px;
+">There are still <span style="color: #fc8f7d;">15</span> problems left.</span>
+	</div>
+	</div>
+	</div>
+	<img src="images/pen1.png" alt="" class="pen">
+	<img src="images/pen2.png" alt="" class="pen">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript">
+		var random=Math.random();
+		var option1=document.getElementById('option1');
+		var option2=document.getElementById('option2');			
+		var option3=document.getElementById('option3');
+		var option4=document.getElementById('option4');
+		window.onload=function () {
+			if (random>0&&random<0.25) {
+				option1.value="{$English}";
+			} else {
+				if (random>0.25&&random<0.5) {
+				option2.value="{$English}";
+				option1.value="{$English1}";} 
+				else {
+					if (random>0.5&&random<0.75) {
+				option3.value="{$English}";	
+				option1.value="{$English2}";} 
+				else {
+				option4.value="{$English}";
+				option1.value="{$English3}";
+					}
+				}
+			}
+			console.log(random);
+		}
+	</script>
+</body>
+</html>

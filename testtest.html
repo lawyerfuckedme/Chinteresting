@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>TEST</title>
+	<style type="text/css">
+	.phone-wrapper{
+	    width: 25%;
+	    float: left;
+	    /*background: url(images/ipone_right.png) no-repeat;*/
+	    /*background-position: center;*/
+	    /*background-size: cover;*/
+	    overflow: hidden;
+	    height: 565px;
+	    position: relative;
+	    margin-left: 25%;
+	}
+	#carousel img{
+    float: left;
+	}
+	#carousel{
+    /*width: 341%;*/
+    /*left: -245px;*/
+    position: absolute;
+    z-index: -1;
+    top: 12%;
+	}
+	</style>
+</head>
+<body>
+		<div class="phone-wrapper">
+		<div id="carousel" style="left: -35.67%">
+			<img id="img" src="images/picture_4.png" alt="" style="width: 16.66%">
+			<img src="images/picture_1.png" alt="" style="width: 16.66%">
+			<img src="images/picture_2.png" alt="" style="width: 16.66%">
+			<img src="images/picture_3.png" alt="" style="width: 16.66%">
+			<img src="images/picture_4.png" alt="" style="width: 16.66%">
+			<img src="images/picture_1.png" alt="" style="width: 16.66%">
+		</div>
+		</div>
+		<script type="text/javascript">
+			window.onload=function () {
+		var phone_wrapper=document.getElementById('phone-wrapper');
+		var carousel=document.getElementById('carousel');
+		var timer;
+		var img=document.getElementById('img');
+		var width=parseInt(img.offsetWidth);
+		console.log(width);
+		play();
+		// function
+		function animate(offset) {
+			var newLeft=parseInt(carousel.style.left)+offset;
+			var time=300;
+			var interval=10;
+			var speed=offset/(time/interval);
+			function go() {
+				if (speed<0&&parseInt(carousel.style.left)>newLeft) {
+					carousel.style.left=parseInt(carousel.style.left)+speed+'px';
+					setTimeout(go,interval);
+					// console.log(carousel.style.left);
+				}
+				else{ 
+					carousel.style.left=newLeft+'px';
+			if (parseInt(carousel.style.left)<-984) {
+				carousel.style.left=-width+'px';
+			}
+				}
+			}
+			go();
+			
+		}
+		function play() {
+			timer=setInterval(function () {
+				animate(-width);
+			},3000);
+		}
+	}
+		</script>
+</body>
+</html>
